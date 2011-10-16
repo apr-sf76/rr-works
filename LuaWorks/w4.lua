@@ -16,11 +16,13 @@ local function towerStart()
 end
 
 local function towerStep1()
-	-- homework
+	towers["t3"]={1}
+	towers["t1"]={3,  2}
 end
 
 local function towerStep6()
-	-- homework
+	towers["t3"]={3,2}
+	towers["t1"]={1}
 end
 
 run = function()
