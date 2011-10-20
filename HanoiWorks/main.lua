@@ -22,7 +22,7 @@ local function setup()
 
 	local ground = display.newImage( "floor.png" )
 	ground.x = 240; ground.y = 320
-	physics.addBody( ground, "static", { friction=0.6 } )
+	physics.addBody( ground, "static", { friction=0.2 } )
 
 	local sticks = {}
 	for i=1,3 do
@@ -36,15 +36,33 @@ local function setup()
 	end
 	
 	local plate = display.newImage( "plate.png" )
-	plate.x = 80; plate.y = 200
-	physics.addBody( plate, { density=1.0, bounce=0.2 } )
-	plate.isFixedRotation = true 
-	plate.myName = "plate"
+     plate.x = 80; plate.y = 200
+	 physics.addBody( plate, { density=0.8, bounce=0.2 } )
+	 plate.isFixedRotation = false
+	 plate.myName = "plate"
+
+     plate:addEventListener( "touch", hanoiDrag.startDrag )
+     
+
+
+     local plate = display.newImage( "plate.png" )
+     plate.x = 240; plate.y = 300
+	 physics.addBody( plate, { density=0.8, bounce=0.2 } )
+	 plate.isFixedRotation = false
+	 plate.myName = "plate"
+
+	 plate:addEventListener( "touch", hanoiDrag.startDrag )
+
+	 local plate = display.newImage( "plate.png" )
+     plate.x = 400; plate.y = 300
+	 physics.addBody( plate, { density=0.8, bounce=0.2 } )
+	 plate.isFixedRotation = false
+	 plate.myName = "plate"
 
 	-- Add touch event listeners to objects
 	plate:addEventListener( "touch", hanoiDrag.startDrag )
 end
 
-setup()
+setup{}
 
 
